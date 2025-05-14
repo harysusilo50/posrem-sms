@@ -1,15 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\KeuanganController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\AnggotaController;
-use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\Admin\JadwalController;
-use App\Http\Controllers\Admin\PeralatanController;
+use App\Http\Controllers\Pages\UserController;
+use App\Http\Controllers\Pages\HomeController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\PelayananController;
-use App\Models\Jadwal;
-use Carbon\Carbon;
+use App\Http\Controllers\Pages\DataKesehatanController;
+use App\Http\Controllers\Pages\KonsultasiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,5 +32,11 @@ Route::group(
         Route::get('report/user', [UserController::class, 'export_pdf'])->name('user.report');
         Route::get('profile', [UserController::class, 'profil'])->name('user.profil');
         Route::put('profile/update', [UserController::class, 'update_profil'])->name('user.update-profil');
+
+        // Data Kesehatan
+        Route::resource('data-kesehatan', DataKesehatanController::class);
+
+        // Konsultasi
+        Route::resource('konsultasi', KonsultasiController::class);
     }
 );

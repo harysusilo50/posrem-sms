@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataKesehatan extends Model
 {
     use HasFactory;
-    protected $append = ['format_tanggal_input'];
+    protected $append = ['format_tgl_pemeriksaan'];
 
     public function user()
     {
@@ -21,9 +21,10 @@ class DataKesehatan extends Model
         return $this->belongsTo(User::class, 'kader_id', 'id');
     }
 
-    public function getCreatedAtAttribute()
+    public function getFormatTglPemeriksaanAttribute()
     {
-        return Carbon::parse($this->attributes['created_at'])->isoFormat('dddd, D MMMM Y | HH:mm');
+        return Carbon::parse($this->attributes['tgl_pemeriksaan'])->isoFormat('dddd, D MMMM Y');
+        // return Carbon::parse($this->attributes['tanggal'])->isoFormat('dddd, D MMMM Y | HH:mm');
     }
 
 }

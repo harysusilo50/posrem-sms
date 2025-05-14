@@ -143,10 +143,10 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="my-2">
+                {{-- <div class="my-2">
                     <a href="{{ route('user.report') }}" class="btn btn-danger btn-sm" target="_blank">Cetak
                         <i class="ti ti-file ms-1"></i></a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
