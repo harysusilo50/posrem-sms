@@ -10,7 +10,7 @@
                             <img src="{{ asset('img/logo.png') }}" width="180" alt="">
                         </a>
                         <div class="text-center text-md-left">
-                            <h1 class="h4 text-gray-900" style="font-weight: 500">Masuk</h1>
+                            <h1 class="h4 text-gray-900" style="font-weight: 500">REMAJA SRENGSENG MENUJU SEHAT</h1>
                             <p class="text-center">Masukan username dan password anda untuk masuk ke sistem</p>
                         </div>
                         <form method="POST" action="{{ route('login') }}">

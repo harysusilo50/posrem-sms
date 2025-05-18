@@ -30,8 +30,8 @@
                         <span class="hide-menu">Pengguna</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ Request::is('user/*') ? 'active' : '' }}" href="{{ route('user.index') }}"
-                            aria-expanded="false">
+                        <a class="sidebar-link {{ Request::is('user/*') ? 'active' : '' }}"
+                            href="{{ route('user.index') }}" aria-expanded="false">
                             <span>
                                 <i class="ti ti-user"></i>
                             </span>
@@ -45,7 +45,8 @@
                     <span class="hide-menu">Kesehatan</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('data-kesehatan/*') ? 'active':'' }}" href="{{ route('data-kesehatan.index') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ Request::is('data-kesehatan/*') ? 'active' : '' }}"
+                        href="{{ route('data-kesehatan.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-heartbeat"></i>
                         </span>
@@ -53,7 +54,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('konsultasi/*') ? 'active':'' }}" href="{{ route('konsultasi.index') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ Request::is('konsultasi/*') ? 'active' : '' }}"
+                        href="{{ route('konsultasi.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-message"></i>
                         </span>
@@ -61,7 +63,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./" aria-expanded="false">
+                    <a class="sidebar-link {{ Request::is('penyuluhan/*') ? 'active' : '' }}"
+                        href="{{ route('penyuluhan.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-report-medical"></i>
                         </span>
