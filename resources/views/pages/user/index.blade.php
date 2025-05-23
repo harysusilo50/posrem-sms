@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title', 'Data Pengguna')
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4"> <i class="ti ti-user"></i> Daftar Pengguna Sistem </h5>
             <div class="d-lg-flex justify-content-lg-end mb-3 d-block">

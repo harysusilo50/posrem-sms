@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title', 'Detail Konsultasi')
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <!-- Card Body -->
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4"> <i class="ti ti-message"></i> Detail Konsultasi</h5>
@@ -89,7 +89,7 @@
         </div>
     </div>
     @if ((Auth::user()->role == 'petugas' || Auth::user()->role == 'admin') && empty($konsultasi->jawaban))
-        <div class="card shadow mb-4">
+        <div class="card mb-4">
             <!-- Card Body -->
             <div class="card-body">
                 <h5 class="card-title text-center fw-semibold mb-4"> Jawab Pertanyaan</h5>

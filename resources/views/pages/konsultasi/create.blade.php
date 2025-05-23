@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title', 'Buat Konsultasi')
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <!-- Card Body -->
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4"> <i class="ti ti-message"></i> Buat Konsultasi</h5>
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <!-- Card Body -->
         <div class="card-body">
             <h5 class="card-title text-center fw-semibold mb-4"> Ajukan Pertanyaan</h5>

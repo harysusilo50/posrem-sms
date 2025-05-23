@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title', 'Tambah User')
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <!-- Card Body -->
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4"> <i class="ti ti-user-plus"></i> Tambah Akun Pengguna Baru </h5>

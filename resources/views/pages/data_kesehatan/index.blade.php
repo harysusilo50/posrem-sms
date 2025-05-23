@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('title', 'Data Kesehatan')
 @section('content')
-    <div class="card shadow mb-4">
+    <div class="card mb-4">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4"> <i class="ti ti-heartbeat"></i> Data Kesehatan </h5>
             <div class="d-lg-flex justify-content-lg-end mb-3 d-block">
