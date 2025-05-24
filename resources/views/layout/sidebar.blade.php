@@ -1,10 +1,11 @@
 <aside class="left-sidebar">
     <!-- Sidebar scroll-->
     <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
+        <div class="brand-logo d-flex align-items-center justify-content-between pt-3">
             <a href="" class="text-nowrap logo-img">
                 <img src="{{ asset('img/logo.png') }}" width="90" alt="" />
             </a>
+            <h6 class="text-wrap fw-bold ms-1">POSYANDU REMAJA SRENGSENG MENUJU SEHAT</h6>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
             </div>

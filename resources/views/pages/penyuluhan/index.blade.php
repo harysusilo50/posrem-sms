@@ -2,7 +2,9 @@
 @section('title', 'Penyuluhan')
 @section('content')
     <div class="bg-light rounded-3 py-3">
-        <h2 class="text-center mb-5">Informasi Posyandu</h2>
+        <div class="bg-primary mx-5 rounded mb-5 py-1 align-middle">
+            <h2 class="text-center text-white">Informasi Posyandu</h2>
+        </div>
         <div class="row d-flex justify-content-center">
             <div class="col-10 col-lg-6 d-flex justify-content-center">
                 <a href="{{ route('penyuluhan.informasi.index') }}" class="card col-12 col-md-10 text-decoration-none">

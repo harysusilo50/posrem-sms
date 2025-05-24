@@ -2,7 +2,9 @@
 @section('title', 'Dashboard')
 @section('content')
   <div class="bg-light rounded-3 py-3 position-relative">
-        <h2 class="text-center fw-bold mb-5">🌟 SELAMAT DATANG 🌟<br> DI POSYANDU REMAJA SRENGSENG MENUJU SEHAT</h2>
+        <div class="bg-primary mx-5 rounded mb-5 py-1">
+            <h2 class="text-center fw-bold text-white">🌟 SELAMAT DATANG 🌟<br> DI POSYANDU REMAJA SRENGSENG MENUJU SEHAT</h2>
+        </div>
         <div class="position-absolute top-50 start-50 translate-middle">
             <img src="{{ asset('img/healthcare.png') }}" style="width: 180px">
         </div>
