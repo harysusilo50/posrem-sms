@@ -1,8 +1,8 @@
 @extends('layout.app')
 @section('title', 'Penyuluhan')
 @section('content')
-    <div class="bg-light rounded-3 py-3">
-        <div class="bg-primary mx-5 rounded mb-5 py-1 align-middle">
+    <div class="rounded-3 py-3" style="background-color: #ADD8E6">
+        <div class="mx-5 rounded mb-5 py-1 align-middle" style="background-color: #6495ED">
             <h2 class="text-center text-white">Informasi Posyandu</h2>
         </div>
         <div class="row d-flex justify-content-center">

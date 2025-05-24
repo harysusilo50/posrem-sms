@@ -1,9 +1,9 @@
 @extends('layout.app')
 @section('title', 'Dashboard')
 @section('content')
-  <div class="bg-light rounded-3 py-3 position-relative">
-        <div class="bg-primary mx-5 rounded mb-5 py-1">
-            <h2 class="text-center fw-bold text-white">🌟 SELAMAT DATANG 🌟<br> DI POSYANDU REMAJA SRENGSENG MENUJU SEHAT</h2>
+  <div class="rounded-3 py-3 position-relative" style="background-color: #ADD8E6">
+        <div class="mx-5 rounded mb-5 py-1" style="background-color: #6495ED">
+            <h2 class="text-center fw-bold text-white">SELAMAT DATANG<br> DI POSYANDU REMAJA SRENGSENG MENUJU SEHAT</h2>
         </div>
         <div class="position-absolute top-50 start-50 translate-middle">
             <img src="{{ asset('img/healthcare.png') }}" style="width: 180px">
