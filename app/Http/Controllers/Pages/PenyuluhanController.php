@@ -404,4 +404,16 @@ class PenyuluhanController extends Controller
             return redirect()->back();
         }
     }
+
+    public function artikel_mental_show($id)
+    {
+        $data = Penyuluhan::findOrFail($id);
+        return view('pages.penyuluhan.artikel_mental.show', compact('data'));
+    }
+
+    public function artikel_kesehatan_show($id)
+    {
+        $data = Penyuluhan::findOrFail($id);
+        return view('pages.penyuluhan.artikel_kesehatan.show', compact('data'));
+    }
 }

@@ -24,44 +24,47 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
-                @if (Auth::user()->role == 'admin')
+                @auth
+                    @if (Auth::user()->role == 'admin')
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Pengguna</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link {{ Request::is('user/*') ? 'active' : '' }}"
+                                href="{{ route('user.index') }}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user"></i>
+                                </span>
+                                <span class="hide-menu">Data Pengguna</span>
+                            </a>
+                        </li>
+                    @endif
+
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Pengguna</span>
+                        <span class="hide-menu">Kesehatan</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ Request::is('user/*') ? 'active' : '' }}"
-                            href="{{ route('user.index') }}" aria-expanded="false">
+                        <a class="sidebar-link {{ Request::is('data-kesehatan/*') ? 'active' : '' }}"
+                            href="{{ route('data-kesehatan.index') }}" aria-expanded="false">
                             <span>
-                                <i class="ti ti-user"></i>
+                                <i class="ti ti-heartbeat"></i>
                             </span>
-                            <span class="hide-menu">Data Pengguna</span>
+                            <span class="hide-menu">Data Kesehatan</span>
                         </a>
                     </li>
-                @endif
-
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Kesehatan</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('data-kesehatan/*') ? 'active' : '' }}"
-                        href="{{ route('data-kesehatan.index') }}" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-heartbeat"></i>
-                        </span>
-                        <span class="hide-menu">Data Kesehatan</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('konsultasi/*') ? 'active' : '' }}"
-                        href="{{ route('konsultasi.index') }}" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-message"></i>
-                        </span>
-                        <span class="hide-menu">Konsultasi</span>
-                    </a>
-                </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('konsultasi/*') ? 'active' : '' }}"
+                            href="{{ route('konsultasi.index') }}" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-message"></i>
+                            </span>
+                            <span class="hide-menu">Konsultasi</span>
+                        </a>
+                    </li>
+                @endauth
+                
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ Request::is('penyuluhan/*') ? 'active' : '' }}"
                         href="{{ route('penyuluhan.index') }}" aria-expanded="false">
