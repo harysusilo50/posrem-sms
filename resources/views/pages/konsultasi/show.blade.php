@@ -10,7 +10,7 @@
                     <p class="mb-0 fw-bold text-black">ID Anggota</p>
                 </div>
                 <div class="col-12 col-lg-10">
-                    <p>{{ $konsultasi->user->id }}</p>
+                    <p>{{ $konsultasi->user->id ?? '-' }}</p>
                 </div>
             </div>
             <div class="row">
@@ -18,7 +18,7 @@
                     <p class="mb-0 fw-bold text-black">Nama</p>
                 </div>
                 <div class="col-12 col-lg-10">
-                    <p>{{ $konsultasi->user->nama }}</p>
+                    <p>{{ $konsultasi->user->nama ?? '-' }}</p>
                 </div>
             </div>
             <div class="row">
@@ -26,7 +26,7 @@
                     <p class="mb-0 fw-bold text-black">Usia</p>
                 </div>
                 <div class="col-12 col-lg-10">
-                    <p>{{ $konsultasi->user->usia }} Tahun</p>
+                    <p>{{ $konsultasi->user->usia ?? '-' }} Tahun</p>
                 </div>
             </div>
             <div class="row mb-2">
@@ -34,7 +34,7 @@
                     <p class="mb-0 fw-bold text-black">Gender</p>
                 </div>
                 <div class="col-12 col-lg-10">
-                    @switch($konsultasi->user->jenis_kelamin)
+                    @switch($konsultasi->user->jenis_kelamin ?? '-')
                         @case('laki_laki')
                             <span class="badge rounded-pill text-bg-primary">Laki-laki
                                 <i class="ti ti-gender-male"></i></span>
@@ -81,7 +81,7 @@
                         <p class="mb-0 fw-bold text-black">Dijawab oleh</p>
                     </div>
                     <div class="col-12 col-lg-10">
-                        <p>{!! $konsultasi->petugas->nama !!}</p>
+                        <p>{!! $konsultasi->petugas->nama ?? '-' !!}</p>
                     </div>
                 </div>
                 <a href="{{ route('konsultasi.index') }}" class="btn btn-light text-danger">Kembali</a>

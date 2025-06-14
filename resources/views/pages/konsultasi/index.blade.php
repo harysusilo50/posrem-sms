@@ -51,12 +51,12 @@
                                             Detail <i class="ti ti-eye ms-2"></i>
                                         </a>
                                         <!-- Button trigger modal -->
-                                        @if (Auth::user()->role == 'admin' || Auth::id() == $item->user_id)
+                                        {{-- @if (Auth::user()->role == 'admin' || Auth::id() == $item->user_id)
                                             <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal"
                                                 data-bs-target="#model_delete{{ $item->id }}">
                                                 Hapus <i class="ti ti-trash"></i>
                                             </button>
-                                        @endif
+                                        @endif --}}
                                     </div>
                                     @if (Auth::user()->role == 'admin')
                                         <!-- Modal -->

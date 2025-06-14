@@ -78,7 +78,7 @@
                 {{-- No HP --}}
                 <div class="form-group mb-1">
                     <label class="col-form-label" for="no_hp" style="font-weight: 500">Nomor HP</label>
-                    <input id="no_hp" type="text" class="form-control @error('no_hp') is-invalid @enderror"
+                    <input id="no_hp" type="number" class="form-control @error('no_hp') is-invalid @enderror"
                         name="no_hp" value="{{ $user->no_hp }}" required autocomplete="no_hp">
                     @error('no_hp')
                         <span class="invalid-feedback" role="alert">

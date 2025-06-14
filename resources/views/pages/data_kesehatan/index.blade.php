@@ -37,14 +37,14 @@
                                 <td class="text-center" style="width:5%">
                                     {{ $loop->iteration }}</td>
                                 <td>
-                                    {{ $item->user->nama }}
+                                    {{ $item->user->nama ?? '-' }}
                                 </td>
                                 <td>
-                                    {{ $item->user->usia }} Thn
+                                    {{ $item->user->usia ?? '-' }} Thn
                                 </td>
                                 <td>
                                     <span class="fw-bold">{{ $item->format_tgl_pemeriksaan }}</span> <br>
-                                    oleh <small> <i>{{ $item->kader->nama }} </i></small>
+                                    oleh <small> <i>{{ $item->kader->nama ?? '-' }} </i></small>
                                 </td>
                                 <td>
                                     {{ $item->tinggi_badan }} cm
