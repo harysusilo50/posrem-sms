@@ -52,22 +52,35 @@
                             {{-- Password --}}
                             <div class="form-group mb-1">
                                 <label class="col-form-label" for="password" style="font-weight: 500">Password</label>
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password" required
-                                    autocomplete="new-password">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                 <div class="input-group">
+                                    <input id="password" type="password"
+                                        class="form-control @error('password') is-invalid @enderror" name="password" required
+                                        autocomplete="new-password" onkeyup="cekPassword()">
+                                    <button type="button" class="input-group-text rounded-end-2" id="showHidePw">
+                                        <i class="fa fa-eye" aria-hidden="true"></i></button>
+                                    <div class="invalid-feedback" role="alert" id="password_error">
+                                    </div>
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
 
                             {{-- Konfirmasi Password --}}
                             <div class="form-group mb-1">
                                 <label class="col-form-label" for="password-confirm" style="font-weight: 500">Konfirmasi
                                     Password</label>
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                <div class="input-group">
+                                    <input id="password-confirm" type="password" class="form-control"
+                                        name="password_confirmation" required autocomplete="new-password"
+                                        onkeyup="cekPassword()">
+                                    <button type="button" class="input-group-text rounded-end-2" id="showHideConfPw">
+                                        <i class="fa fa-eye" aria-hidden="true"></i></button>
+                                    <div class="invalid-feedback" role="alert" id="password_error_confirm">
+                                    </div>
+                                </div>
                             </div>
 
                             {{-- Alamat --}}
@@ -130,7 +143,7 @@
                             </div>
 
                             {{-- Tombol Submit --}}
-                            <button class="btn btn-primary w-100 py-8 fs-4 my-4 rounded-2"
+                            <button class="btn btn-primary w-100 py-8 fs-4 my-4 rounded-2" id="register_btn" disabled
                                 type="submit">Registrasi</button>
                             <div class="d-flex align-items-center justify-content-center">
                                 <p class="fs-4 mb-0 fw-bold">Sudah punya akun?</p>
@@ -143,4 +156,77 @@
         </div>
 
     </div>
+@endsection
+@section('js')
+    <script>
+        $('#showHidePw').click(function(e) {
+            e.preventDefault();
+            var pw = $('#password').attr('type');
+            if (pw === "password") {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password')
+            }
+        });
+
+        $('#showHideConfPw').click(function(e) {
+            e.preventDefault();
+            var pw = $('#password-confirm').attr('type');
+            if (pw === "password") {
+                $('#password-confirm').attr('type', 'text');
+            } else {
+                $('#password-confirm').attr('type', 'password')
+            }
+        });
+
+        function validasiPassword(password) {
+            let temp = ''
+            // Cek keberadaan angka
+            if (!/\d/.test(password)) {
+                temp += '<p class="mb-0"><strong>- Harus memiliki angka</strong></p>';
+            }
+            // Cek keberadaan huruf kapital
+            if (!/[A-Z]/.test(password)) {
+                temp += '<p class="mb-0"><strong>- Harus memiliki huruf kapital</strong></p>';
+            }
+
+            return temp;
+        }
+
+        function cekPassword() {
+            var password = $("#password").val();
+
+            let validate = validasiPassword(password);
+            if (!validate) {
+                $('#password').removeClass('is-invalid');
+                $('#password_error').empty();
+                $('#register_btn').prop('disabled', false);
+            } else {
+                $('#password').addClass('is-invalid');
+                $('#password_error').html(validate);
+                $('#register_btn').prop('disabled', true);
+                if (password.length === 0) {
+                    $('#password').removeClass('is-invalid');
+                    $('#password_error').empty();
+                    $('#register_btn').prop('disabled', false);
+                }
+            }
+            var confirm = $("#password-confirm").val();
+
+            if (password != confirm) {
+                $('#password-confirm').addClass('is-invalid');
+                $('#password_error_confirm').html(`<p class="mb-0"><strong>Password tidak sesuai</strong></p>`);
+                $('#register_btn').prop('disabled', true);
+                if (confirm.length === 0) {
+                    $('#password-confirm').removeClass('is-invalid');
+                    $('#password_error_confirm').empty();
+                    $('#register_btn').prop('disabled', false);
+                }
+            } else {
+                $('#password-confirm').removeClass('is-invalid');
+                $('#password_error_confirm').empty();
+                $('#register_btn').prop('disabled', false);
+            }
+        }
+    </script>
 @endsection
